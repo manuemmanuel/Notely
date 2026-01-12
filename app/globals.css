@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #f9fafb; /* Light gray background */
+  font-family: var(--font-space-grotesk), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.dark body {
+  background: #0a0a0a; /* Near-black background */
+}
+
+* {
+  font-family: inherit;
+}
+
+/* TipTap Editor Styles */
+.ProseMirror {
+  outline: none;
+  min-height: 100%;
+  padding: 0;
+  color: #1f2937; /* gray-800 for light mode */
+  line-height: 1.75;
+  font-size: 15px;
+}
+
+.dark .ProseMirror {
+  color: #e5e7eb; /* gray-200 for dark mode */
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #9ca3af; /* gray-400 */
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.dark .ProseMirror p.is-editor-empty:first-child::before {
+  color: #6b7280; /* gray-500 for dark mode */
+}
+
+.ProseMirror h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  color: #111827; /* gray-900 */
+}
+
+.dark .ProseMirror h1 {
+  color: #f9fafb; /* gray-50 */
+}
+
+.ProseMirror h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  color: #111827; /* gray-900 */
+}
+
+.dark .ProseMirror h2 {
+  color: #f9fafb; /* gray-50 */
+}
+
+.ProseMirror h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: #111827; /* gray-900 */
+}
+
+.dark .ProseMirror h3 {
+  color: #f9fafb; /* gray-50 */
+}
+
+/* Bullet and Ordered Lists */
+.ProseMirror ul {
+  padding-left: 1.5em;
+  margin: 1em 0;
+  list-style-type: disc !important;
+  list-style-position: outside;
+}
+
+.ProseMirror ol {
+  padding-left: 1.5em;
+  margin: 1em 0;
+  list-style-type: decimal !important;
+  list-style-position: outside;
+}
+
+.ProseMirror li {
+  margin: 0.5em 0;
+  padding-left: 0.5em;
+  color: inherit;
+  display: list-item !important;
+  list-style-position: outside;
+}
+
+/* Nested lists */
+.ProseMirror ul ul {
+  list-style-type: circle !important;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.ProseMirror ul ul ul {
+  list-style-type: square !important;
+}
+
+.ProseMirror ol ol {
+  list-style-type: lower-alpha !important;
+}
+
+.ProseMirror ol ol ol {
+  list-style-type: lower-roman !important;
+}
+
+.ProseMirror p {
+  color: inherit;
+  margin: 0.5em 0;
+  line-height: 1.75;
+}
+
+.ProseMirror code {
+  background-color: rgba(97, 97, 97, 0.1);
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.ProseMirror pre {
+  background-color: rgba(97, 97, 97, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+.ProseMirror pre code {
+  background: none;
+  padding: 0;
+}
+
+.ProseMirror strong {
+  font-weight: bold;
+}
+
+.ProseMirror em {
+  font-style: italic;
+}
+
