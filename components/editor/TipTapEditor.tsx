@@ -22,8 +22,6 @@ export function TipTapEditor({ noteId, initialContent, onUpdate }: TipTapEditorP
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
-        // We provide underline via a dedicated extension
-        underline: false,
         // Disable default ListItem - we'll use CustomListItem instead
         listItem: false,
         // Ensure BulletList and OrderedList are enabled with proper configuration
@@ -42,6 +40,7 @@ export function TipTapEditor({ noteId, initialContent, onUpdate }: TipTapEditorP
           class: 'list-item',
         },
       }),
+      // Underline is provided via a dedicated extension (TipTap v2-compatible)
       Underline,
       TextAlign.configure({
         types: ['heading', 'paragraph'],
